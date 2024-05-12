@@ -19,4 +19,8 @@ app.listen(3000, (req, res) => {
     console.log("listening on port 3000");
   });
 
-mongoose.connect();
+  mongoose.connect("mongodb+srv://mishakmanuel:mydatabase4mongo@cluster0.zcwmmue.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
+    console.log("Connectido successfully!");
+}).catch(()=>{
+    console.log("Failed to connect");
+});

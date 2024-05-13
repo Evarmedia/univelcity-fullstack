@@ -1,4 +1,3 @@
-const express = require('express');
 const Book = require('../models/bookModel.js');
 
 const createBooks = async (req, res) => {
@@ -19,7 +18,7 @@ const createBooks = async (req, res) => {
 
 const getBooks = async (req, res) => {
     try {
-        const books = await book.find({});
+        const books = await Book.find({});
         res.status(200).json({
           count: books.length,
           data: books,
@@ -46,7 +45,7 @@ const updateBook = async (req, res) => {
         const { id } = req.params;
         const SingleBook = await Book.findByIdAndUpdate(id, req.body);
         if (!SingleBook) {
-          return res.status(404).json({ message: "Book not found" });
+          return res.send({ message: "Book not found" });
         }
         const updatedBook = await Book.findById(id);
         res.status(200).json(updatedBook);

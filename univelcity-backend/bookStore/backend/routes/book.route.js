@@ -13,7 +13,7 @@ router.post('/', createBooks);
 
 router.get('/', getBooks);
 
-router.get('/:id', getBooks);
+router.get('/:id', getBook);
 
 router.put('/:id', updateBook);
 

@@ -14,6 +14,10 @@ const bookSchema = mongoose.Schema(
       type: Number,
       require: true,
     },
+    image: {
+      type: String,
+      require: true,
+    },
   },
 
   {

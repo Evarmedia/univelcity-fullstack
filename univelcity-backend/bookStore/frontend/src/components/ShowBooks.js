@@ -30,18 +30,31 @@ const ShowBooks = () => {
         <Spinner />
       ) : (
         <div className='flex justify-center p-12'>
-          <div className='p-4 px-12 border border-3 border-sky-400 shadow-black isolate aspect-video w-96 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5'>
-            <h1 className='mt-2 text-2xl lg:text-4xl font-bold'>
-              Title: {book.title}
+          <div className='p-4 px-12 border border-3 border-amber-700 shadow-black isolate aspect-video w-96 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5'>
+            <h1 className='mt-2 text-gray-800 text-lg lg:text-2xl font-bold'>
+              <span className="text-amber-800 ">Title: </span>{book.title}
             </h1>
             <img
               className='my-4 border-white border-4'
               src={book.image}
               alt={book.title}
             />
-            <h1 className=' text-2xl font-bold'>Author: {book.author}</h1>
-            <h1 className=' text-2xl font-bold'>Published in: {book.publishedYear}</h1>
-            <h1 className=' text-lg font-bold'> Created at: {new Date(book.createdAt).toString()}</h1>
+            <h1 className=' text-lg font-bold text-gray-800'>
+            <span className="text-amber-800">Author: </span>
+              {book.author}
+            
+            </h1>
+            <h1 className='text-gray-800 text-lg  font-bold'>
+            <span className="text-amber-800">Published in: </span>
+             {book.publishedYear}</h1>
+            <h1 className='text-gray-800 text-lg font-bold'> 
+            <span className="text-amber-800">Created at: </span>
+             {new Date(book.createdAt).toString()}</h1>
+             <div> 
+              <h1 className='text-gray-800 text-lg  font-bold'>Description: </h1>
+              <p className="text-balance text-justify">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, laborum reprehenderit. Inventore labore enim quod veritatis, itaque vitae repellendus nulla impedit? Ratione facere corrupti tempore repellendus magnam sit illum blanditiis.</p>
+                </div>
           </div>
         </div>
       )}

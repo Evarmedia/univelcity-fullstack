@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const PORT = 3005;
 
-const bookRouter = require('./routes/book.route.js')
+const bookRouter = require('./routes/book.route.js');
+const userRouter = require('./routes/user.route.js');
 const cors = require('cors');
 
 const app = express();
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/book', bookRouter);
+app.use('/api/book/register', userRouter)
 
 
 app.listen(PORT, (req, res) => {

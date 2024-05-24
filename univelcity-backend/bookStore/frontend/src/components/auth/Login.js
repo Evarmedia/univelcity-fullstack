@@ -47,28 +47,25 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
     const data = {
-      email: email,
-      password: password,
+      email,
+      password,
     };
     axios
-      .post("http://localhost:3005/api/book/register/login", data)
-      .then(() => {
-        toast.success("Logined Successfully");
-        setEmail("");
-        setPassword("");
-
+      .post("http://localhost:3005/api/book/auth/login/", data)
+      .then((res) => {
+        // console.log(data);
+        // console.log(res.data);
+        toast.success(res.data.message);
         setTimeout(() => {
           navigate("/home");
         }, 1000);
+
+        setEmail("");
+        setPassword("");
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error(error.response.data.message);
       });
   };
@@ -121,7 +118,9 @@ const Login = () => {
               id='password'
               autoComplete='current-password'
               value={password}
-                  onChange={(e)=> {setPassword(e.target.value);}}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
             <FormControlLabel
               control={<Checkbox value='remember' color='primary' />}

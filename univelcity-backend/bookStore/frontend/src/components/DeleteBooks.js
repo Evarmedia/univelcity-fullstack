@@ -22,7 +22,7 @@ const DeleteBooks = () => {
     console.log(res.data.message);  
     toast.success(res.data.message);
       setTimeout(()=>{
-        navigate('/');
+        navigate('/home');
       }, 1000)
     }).catch((error) => {
       console.log(error);

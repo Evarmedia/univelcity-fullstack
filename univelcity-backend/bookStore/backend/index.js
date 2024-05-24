@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/book', bookRouter);
-app.use('/api/book/register', userRouter)
+app.use('/api/book/auth', userRouter)
 
 
 app.listen(PORT, (req, res) => {

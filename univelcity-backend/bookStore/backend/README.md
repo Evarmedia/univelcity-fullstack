@@ -5,6 +5,10 @@ npm install mongoose
 npm install nodemon
 npm i cors
 
+npm install bcrypt
+npm install jsonwebtoken
+
+
 <!-- mongooes.connect("mongodb+srv://mishakmanuel:ROcA1kUfF4w9pwbs@cluster0.zcwmmue.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("Connectido successfully!");
 }).catch(()=>{

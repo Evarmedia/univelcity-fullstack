@@ -34,7 +34,7 @@ const CreateBooks = () => {
         setAuthor("");
         setPublishedYear("");
         setTimeout(() => {
-          navigate("/");
+          navigate("/home");
         }, 1000);
       })
       .catch((error) => {

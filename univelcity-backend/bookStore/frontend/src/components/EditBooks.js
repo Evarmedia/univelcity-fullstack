@@ -50,7 +50,7 @@ const EditBooks = () => {
         setLoading(false);
         toast.success("Book Updated Successfully");
         setTimeout(()=>{
-          navigate("/");
+          navigate("/home");
         }, 1000);
         
       })

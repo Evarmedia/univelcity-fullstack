@@ -49,10 +49,10 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(!firstname || !lastname || !email || !password) {
-        toast.error('fill all')
-        return;
-    }
+    // if(!firstname || !lastname || !email || !password) {
+    //     toast.error('fill all data fields')
+    //     return;
+    // }
     const data = {
         firstname: firstname,
         lastname: lastname,
@@ -62,7 +62,7 @@ const Signup = () => {
       };
     //   setLoading(true)
       axios
-      .post("http://localhost:3005/api/book/register", data)
+      .post("http://localhost:3005/api/book/auth/register/", data)
       .then(() => {
         toast.success("Signed up Successfully");
         setFirstname("");

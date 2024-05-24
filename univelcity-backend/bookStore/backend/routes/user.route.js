@@ -5,14 +5,17 @@ const {
     signin,
     signup,
     showAllUsers,
+    deleteUser
 } = require('../controller/user.controller.route.js');
 
 
-router.post('/', signup)
+router.post('/register', signup)
 
 router.post('/login', signin)
 
-router.get('/showusers', showAllUsers)
+router.get('/showusers', showAllUsers);
+
+router.delete('/deleteuser/:id', deleteUser);
 
 // router.post('/register', signup)
 // router.post('/register', signup)

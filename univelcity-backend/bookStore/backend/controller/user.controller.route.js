@@ -2,6 +2,9 @@ const UserMod = require("../models/UserModel.js");
 
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken");
+
+
+const secret = 'a@@R@!F!##31f318ha3rr8301'
 // manage singin
 const signup = async (req, res) => {
 
@@ -91,8 +94,15 @@ const signin = async (req, res) => {
     //   token: token
     // })
 
+    const payload = {userId: user._id}
 
-    res.json({message: `You are loged in as ${email}`})
+
+    const token = jwt.sign(payload, secret, {expiresIn: '1h'});
+
+    res.json({
+      message: `You are loged in as ${email}`,
+      token: token
+  });
 
   } catch (error) {
     res.status(500).json({ message: error.message });
